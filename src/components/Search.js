@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Search.css";
+import { useHistory } from "react-router-dom";
 
 import SearchIcon from "@material-ui/icons/Search";
 import MicIcon from "@material-ui/icons/Mic";
@@ -7,12 +8,13 @@ import { Button } from "@material-ui/core";
 
 function Search() {
   const [input, setInput] = useState("");
+  const history = useHistory();
 
   const search = (e) => {
     e.preventDefault();
-    console.log(input);
-    setInput("");
+    history.push("/search");
   };
+
   return (
     <form className="search">
       <div className="search__input">
