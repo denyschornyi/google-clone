@@ -21,7 +21,9 @@ function Home() {
                 </div>
             </div>
 
-            <div className="home__body"></div>
+            <div className="home__body">
+                <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" alt="google logo"/>
+            </div>
         </div>
     )
 }
