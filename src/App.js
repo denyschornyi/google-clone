@@ -1,18 +1,24 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+
 
 import Home from './pages/Home';
 
 function App() {
   return (
     <div className="app">
-      <h1>I will get a job in this month</h1>
+      <Router>
 
-      {/* Home (with search) */}
-
-      <Home />
-
-      {/* Search page (The results page) */}
+        <Switch>
+            <Route path='/search'>
+              <h1>Search Page</h1>
+            </Route>
+            <Route path='/'>
+                <Home/>
+            </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
