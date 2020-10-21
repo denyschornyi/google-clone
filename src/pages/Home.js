@@ -25,7 +25,7 @@ function Home() {
 
       <div className="home__body">
         <img
-          src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png"
+          src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
           alt="google logo"
         />
         <div className="home__inputContainer">
