@@ -6,7 +6,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import MicIcon from "@material-ui/icons/Mic";
 import { Button } from "@material-ui/core";
 
-function Search() {
+function Search({ hideButtons = false }) {
   const [input, setInput] = useState("");
   const history = useHistory();
 
@@ -27,12 +27,27 @@ function Search() {
         <MicIcon />
       </div>
 
-      <div className="search__buttons">
-        <Button type="submit" onClick={search}>
-          Google Search
-        </Button>
-        <Button variant="outlined">I'm Feeling Lucky</Button>
-      </div>
+      {!hideButtons ? (
+        <div className="search__buttons">
+          <Button type="submit" onClick={search}>
+            Google Search
+          </Button>
+          <Button variant="outlined">I'm Feeling Lucky</Button>
+        </div>
+      ) : (
+        <div className="search__buttons">
+          <Button
+            className="search__buttonsHidden"
+            type="submit"
+            onClick={search}
+          >
+            Google Search
+          </Button>
+          <Button className="search__buttonsHidden" variant="outlined">
+            I'm Feeling Lucky
+          </Button>
+        </div>
+      )}
     </form>
   );
 }

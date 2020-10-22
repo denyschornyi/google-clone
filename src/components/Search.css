@@ -47,5 +47,9 @@
   background-color: #f8f8f8;
   color: #222;
   border: 1px solid #c6c6c6;
-  background-image: linear-gradient(top, #f8f8f8, #f1f1f1);
+  background-image: linear-gradient(to top, #f8f8f8, #f1f1f1);
+}
+
+.search__buttonsHidden {
+  display: none !important;
 }
