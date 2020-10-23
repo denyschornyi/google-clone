@@ -70,7 +70,25 @@ function SearchPage() {
         </div>
       </div>
 
-      <div className="searchPage__results"></div>
+      {true && (
+        <div className="searchPage__results">
+          <p className="searchPage__resultCount">
+            About {data?.searchInformation.formattedTotalResults} (
+            {data?.searchInformation.formattedSearchTime} seconds) for {term}
+          </p>
+          {data?.items.map((item) => {
+            return (
+              <div className="searchPage__result">
+                {" "}
+                <a href={item.link}>{item.displayLink}</a>{" "}
+                <a href={item.link} className="searchPage__resultTitle">
+                  <h2>{item.title}</h2>
+                </a>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
