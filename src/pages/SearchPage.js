@@ -13,9 +13,9 @@ import RoomIcon from "@material-ui/icons/Room";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 function SearchPage() {
   const [{ term }, dispatch] = useStateValue();
-  //   const { data } = useGoogleSearch(term);
+  const { data } = useGoogleSearch(term);
 
-  const data = Response;
+  //   const data = term;
 
   //   https://developers.google.com/custom-search/v1/using_rest
   console.log(data);
@@ -70,7 +70,7 @@ function SearchPage() {
         </div>
       </div>
 
-      {true && (
+      {term && (
         <div className="searchPage__results">
           <p className="searchPage__resultCount">
             About {data?.searchInformation.formattedTotalResults} (
@@ -84,6 +84,7 @@ function SearchPage() {
                 <a href={item.link} className="searchPage__resultTitle">
                   <h2>{item.title}</h2>
                 </a>
+                <p className="searchPage__resultSnippet">{item.snippet}</p>
               </div>
             );
           })}
